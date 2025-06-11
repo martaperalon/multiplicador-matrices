@@ -9,16 +9,22 @@ Aplicación web para crear, editar y multiplicar matrices de tamaño variable, c
 ```sh
 git clone https://github.com/martaperalon/multiplicador-matrices.git
 ```
-git clone https://github.com/martaperalon/multiplicador-matrices.git
 
-Entra en la carpeta:
+### Entra en la carpeta:
+```sh
 cd multiplicador-matrices
-
-Instala las dependencias:
+```
+### Instala las dependencias:
+```sh
 npm install
+```
 
-Ejecuta el servidor de desarrollo:
+### Ejecuta el servidor de desarrollo:
+```sh
 npm run dev
+```
 
-Abre tu navegador en:
-http://localhost:4321
+### Abre tu navegador en:
+```sh
+http://localhost:xxxx (el que te salga)
+```
