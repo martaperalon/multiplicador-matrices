@@ -1,6 +1,6 @@
-import React from "react";
-import { useState } from "react";
-import { useRef } from "react";
+///import React from "react";
+import React, { useState, useRef, useEffect } from "react";
+
 
 export default function MultiplicadorMatrices() {
   const [rowsA, setRowsA] = useState(2);
@@ -65,22 +65,49 @@ export default function MultiplicadorMatrices() {
     setMatrixB(createMatrix(rowsB, colsB));
   };
 
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+    }
+  }, [darkMode]);
+
 
   return (
     <div
       style={{
         fontFamily: "sans-serif",
-        backgroundColor: "#EAB4C8",
-        color: "#ffffff",
+        backgroundColor: "var(--bg-color)",
+        color: "var(--text-color)",
         minHeight: "100vh",
         padding: "2rem",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        position: "relative",
       }}
     >
       <h1 style={{ marginBottom: "2rem" }}>Multiplicador de Matrices</h1>
-
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        style={{
+          position: "absolute",
+          top: "1rem",
+          left: "1rem",
+          padding: "0.5rem 1rem",
+          backgroundColor: "var(--button-bg)",
+          color: "var(--text-color)",
+          border: "none",
+          borderRadius: "6px",
+          cursor: "pointer",
+          zIndex: 1000,
+        }}
+      >
+        {darkMode ? "Modo Claro" : "Modo Oscuro"}
+      </button>
       <div style={{ display: "flex", gap: "4rem", marginBottom: "2rem" }}>
         <MatrixEditor
           title="Matriz A"
@@ -112,8 +139,9 @@ export default function MultiplicadorMatrices() {
         style={{
           padding: "0.75rem 1.5rem",
           fontSize: "1rem",
-          backgroundColor: "#B34A73",
-          color: "white",
+          backgroundColor: "var(--button-bg)",
+          color: "var(--text-color)",
+
           border: "none",
           borderRadius: "8px",
           cursor: "pointer",
@@ -211,8 +239,8 @@ function MatrixEditor({ title, rows, cols, matrix, setMatrix, setRows, setCols, 
                 style={{
                   width: "50px",
                   margin: "2px",
-                  backgroundColor: "#E094B1",
-                  color: "white",
+                  backgroundColor: "var(--input-bg)",
+                  color: "var(--text-color)",
                   border: "1px solid #555",
                   borderRadius: "4px",
                   textAlign: "center",
@@ -228,8 +256,8 @@ function MatrixEditor({ title, rows, cols, matrix, setMatrix, setRows, setCols, 
         style={{
           height: "fit-content",
           padding: "0.5rem 1rem",
-          backgroundColor: "#CC6E92",
-          color: "white",
+          backgroundColor: "var(--input-bg)",
+          color: "var(--text-color)",
           border: "none",
           borderRadius: "6px",
           cursor: "pointer",

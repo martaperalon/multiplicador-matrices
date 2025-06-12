@@ -1,0 +1,52 @@
+:root {
+  --bg-color: #EAB4C8;       
+  --text-color: #ffffff;      
+  --input-bg: #EE90B4;           
+  --button-bg: #CC6E92;        
+  --result-bg: #FFD1DC;       
+}
+
+.dark-theme {
+  --bg-color: #2c1f23;         /* fondo muy oscuro */
+  --text-color: #e6d2dc;       /* texto claro */
+  --input-bg: #333;            /* fondo oscuro inputs */
+  --button-bg: #4B2433;        /* botón en modo oscuro */
+  --result-bg: #704A58;        /* resultado en fondo oscuro */
+}
+
+
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid #555;
+  border-radius: 4px;
+  text-align: center;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.result-cell {
+  background-color: var(--result-bg);
+  padding: 6px;
+  border-radius: 4px;
+  display: inline-block;
+  width: 50px;
+  margin: 4px;
+  text-align: center;
+}
+
